@@ -1,157 +1,134 @@
-import { useState } from 'react';
-import { Hero } from '../components/sections/Hero';
+import { SectionLabel } from '../components/ui/SectionLabel';
 import { ScrollReveal } from '../components/ui/ScrollReveal';
-import { Button } from '../components/ui/Button';
 
 export function Contact() {
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitted(true);
-  };
-
   return (
-    <>
-      <Hero 
-        headline="LET'S TALK GROWTH"
-        minHeight="min-h-[50vh]"
-        backgroundImage="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop"
-      />
+    <div className="flex flex-col w-full">
+      {/* Page Header */}
+      <header className="bg-ivory py-20 px-8 md:px-16 border-b border-border-gray">
+        <ScrollReveal className="max-w-[1400px] mx-auto">
+          <SectionLabel>CONTACT</SectionLabel>
+          <h1
+            className="font-sans font-bold text-charcoal leading-tight mt-4"
+            style={{ fontSize: 'clamp(52px, 7vw, 96px)' }}
+          >
+            Let's Talk Growth
+          </h1>
+          <p className="font-sans text-[16px] text-text-gray font-light mt-3">
+            We respond within 24 hours on business days.
+          </p>
+        </ScrollReveal>
+      </header>
 
-      <section className="py-32 px-10 max-w-[1400px] mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-20">
-          
-          {/* Left Column: Info */}
+      {/* Main Contact Section */}
+      <section className="bg-white py-24 px-8 md:px-16">
+        <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20">
+
+          {/* LEFT — Info */}
           <ScrollReveal>
-            <h2 className="text-[11px] uppercase tracking-[0.2em] font-medium text-charcoal/40 mb-10">CONTACT INFORMATION</h2>
-            
-            <div className="space-y-12">
-              <div>
-                <h3 className="font-display text-2xl tracking-wide mb-2">EMAIL</h3>
-                <a href="mailto:hello@auronixdigital.com" className="text-charcoal/80 hover:text-gold transition-colors text-lg">
-                  hello@auronixdigital.com
-                </a>
-              </div>
-              
-              <div>
-                <h3 className="font-display text-2xl tracking-wide mb-4">SOCIAL</h3>
-                <div className="flex gap-4">
-                  {['FB', 'TW', 'LI', 'IG'].map((social) => (
-                    <a key={social} href="#" className="w-12 h-12 border border-charcoal/20 rounded flex items-center justify-center text-xs tracking-wider transition-colors hover:bg-gold hover:border-gold hover:text-white interactive">
-                      {social}
-                    </a>
-                  ))}
-                </div>
-              </div>
-              
-              <div className="pt-8 border-t border-charcoal/10">
-                <p className="text-charcoal/60 leading-relaxed max-w-sm">
-                  We respond within 24 hours on business days. Let's discuss how we can help scale your business.
-                </p>
+            <h2
+              className="font-sans font-bold text-charcoal leading-tight"
+              style={{ fontSize: 'clamp(32px, 3.5vw, 46px)' }}
+            >
+              Book a Free 30-Min Strategy Call
+            </h2>
+            <p className="font-sans font-light text-[16px] text-text-gray mt-5 leading-relaxed">
+              No pitch, no pressure. Just a focused conversation about your business goals and how we can help you get there.
+            </p>
+
+            <ul className="mt-8 space-y-4">
+              {[
+                'Audit of your current digital presence',
+                'Clarity on the biggest growth opportunities',
+                'A clear next step — no obligation',
+              ].map((item, i) => (
+                <li key={i} className="flex items-start gap-3">
+                  <div className="w-2 h-2 rounded-full bg-gold mt-1.5 flex-shrink-0"></div>
+                  <span className="font-sans text-[15px] text-charcoal">{item}</span>
+                </li>
+              ))}
+            </ul>
+
+            {/* Availability box */}
+            <div className="mt-10 p-6 border border-border-gray bg-ivory">
+              <SectionLabel className="mb-2">AVAILABILITY</SectionLabel>
+              <p className="font-sans text-[15px] text-charcoal font-medium">Monday – Friday, 10AM – 6PM IST</p>
+            </div>
+
+            {/* Direct contact */}
+            <div className="mt-8">
+              <SectionLabel className="mb-2">DIRECT CONTACT</SectionLabel>
+              <div className="font-sans font-light text-[15px] text-text-gray space-y-2">
+                <p><a href="mailto:hello@auronixdigital.com" className="hover:text-charcoal transition-colors">hello@auronixdigital.com</a></p>
+                <p><a href="tel:+910000000000" className="hover:text-charcoal transition-colors">+91 00000 00000</a></p>
               </div>
             </div>
           </ScrollReveal>
-          
-          {/* Right Column: Form */}
+
+          {/* RIGHT — Form */}
           <ScrollReveal delay={200}>
-            {submitted ? (
-              <div className="bg-charcoal/5 p-12 rounded flex flex-col items-center justify-center text-center h-full min-h-[400px]">
-                <div className="w-16 h-16 rounded-full bg-gold/10 text-gold flex items-center justify-center mb-6">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M20 6L9 17l-5-5" />
-                  </svg>
+            <form className="bg-[#98F499] p-10 space-y-6" onSubmit={(e) => e.preventDefault()}>
+              <div className="w-3 h-3 rounded-full bg-charcoal mb-6"></div>
+
+              <div className="grid grid-cols-2 gap-6">
+                <div className="flex flex-col">
+                  <label className="text-[10px] uppercase tracking-[0.15em] text-charcoal mb-2 font-medium">First Name *</label>
+                  <input required type="text" className="bg-transparent border-b border-charcoal/40 py-2 focus:outline-none focus:border-charcoal font-sans font-light text-sm text-charcoal transition-colors" placeholder="Jane" />
                 </div>
-                <h3 className="font-display text-3xl tracking-wide mb-4">MESSAGE RECEIVED</h3>
-                <p className="text-charcoal/60 max-w-md">
-                  Thank you for reaching out. One of our growth strategists will get back to you shortly.
-                </p>
+                <div className="flex flex-col">
+                  <label className="text-[10px] uppercase tracking-[0.15em] text-charcoal mb-2 font-medium">Last Name *</label>
+                  <input required type="text" className="bg-transparent border-b border-charcoal/40 py-2 focus:outline-none focus:border-charcoal font-sans font-light text-sm text-charcoal transition-colors" placeholder="Doe" />
+                </div>
               </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  <div className="flex flex-col gap-2">
-                    <label htmlFor="name" className="text-xs uppercase tracking-wider text-charcoal/60 font-medium">Full Name</label>
-                    <input 
-                      type="text" 
-                      id="name" 
-                      required
-                      className="bg-transparent border-b border-charcoal/20 py-3 text-charcoal outline-none focus:border-gold transition-colors interactive"
-                    />
-                  </div>
-                  <div className="flex flex-col gap-2">
-                    <label htmlFor="email" className="text-xs uppercase tracking-wider text-charcoal/60 font-medium">Email Address</label>
-                    <input 
-                      type="email" 
-                      id="email" 
-                      required
-                      className="bg-transparent border-b border-charcoal/20 py-3 text-charcoal outline-none focus:border-gold transition-colors interactive"
-                    />
-                  </div>
-                </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  <div className="flex flex-col gap-2">
-                    <label htmlFor="phone" className="text-xs uppercase tracking-wider text-charcoal/60 font-medium">Phone Number</label>
-                    <input 
-                      type="tel" 
-                      id="phone" 
-                      required
-                      className="bg-transparent border-b border-charcoal/20 py-3 text-charcoal outline-none focus:border-gold transition-colors interactive"
-                    />
-                  </div>
-                  <div className="flex flex-col gap-2">
-                    <label htmlFor="service" className="text-xs uppercase tracking-wider text-charcoal/60 font-medium">Service Needed</label>
-                    <select 
-                      id="service" 
-                      required
-                      className="bg-transparent border-b border-charcoal/20 py-3 text-charcoal outline-none focus:border-gold transition-colors cursor-pointer appearance-none interactive"
-                    >
-                      <option value="" disabled selected>Select a service...</option>
-                      <option value="Design">Design</option>
-                      <option value="Develop">Develop</option>
-                      <option value="Market">Market</option>
-                      <option value="Scale">Scale</option>
-                      <option value="Full Package">Full Package</option>
-                    </select>
-                  </div>
+              <div className="grid grid-cols-2 gap-6">
+                <div className="flex flex-col">
+                  <label className="text-[10px] uppercase tracking-[0.15em] text-charcoal mb-2 font-medium">Email *</label>
+                  <input required type="email" className="bg-transparent border-b border-charcoal/40 py-2 focus:outline-none focus:border-charcoal font-sans font-light text-sm text-charcoal transition-colors" placeholder="jane@company.com" />
                 </div>
-
-                <div className="flex flex-col gap-2">
-                  <label htmlFor="budget" className="text-xs uppercase tracking-wider text-charcoal/60 font-medium">Budget Range</label>
-                  <select 
-                    id="budget" 
-                    required
-                    className="bg-transparent border-b border-charcoal/20 py-3 text-charcoal outline-none focus:border-gold transition-colors cursor-pointer appearance-none interactive"
-                  >
-                    <option value="" disabled selected>Select budget...</option>
-                    <option value="< $1K">&lt; $1K</option>
-                    <option value="$1K–$5K">$1K – $5K</option>
-                    <option value="$5K–$10K">$5K – $10K</option>
-                    <option value="$10K+">$10K+</option>
-                    <option value="Let's discuss">Let's discuss</option>
-                  </select>
+                <div className="flex flex-col">
+                  <label className="text-[10px] uppercase tracking-[0.15em] text-charcoal mb-2 font-medium">Phone *</label>
+                  <input required type="tel" className="bg-transparent border-b border-charcoal/40 py-2 focus:outline-none focus:border-charcoal font-sans font-light text-sm text-charcoal transition-colors" placeholder="+91 00000 00000" />
                 </div>
+              </div>
 
-                <div className="flex flex-col gap-2">
-                  <label htmlFor="message" className="text-xs uppercase tracking-wider text-charcoal/60 font-medium">Message</label>
-                  <textarea 
-                    id="message" 
-                    rows={4}
-                    required
-                    className="bg-transparent border-b border-charcoal/20 py-3 text-charcoal outline-none focus:border-gold transition-colors resize-none interactive"
-                  ></textarea>
-                </div>
+              <div className="flex flex-col">
+                <label className="text-[10px] uppercase tracking-[0.15em] text-charcoal mb-2 font-medium">Service</label>
+                <select className="bg-transparent border-b border-charcoal/40 py-2 focus:outline-none focus:border-charcoal font-sans font-light text-sm text-charcoal appearance-none transition-colors">
+                  <option>Design</option>
+                  <option>Develop</option>
+                  <option>Market</option>
+                  <option>Scale</option>
+                  <option>Full Package</option>
+                </select>
+              </div>
 
-                <Button type="submit" className="w-full mt-4">
-                  + SEND MESSAGE
-                </Button>
-              </form>
-            )}
+              <div className="flex flex-col">
+                <label className="text-[10px] uppercase tracking-[0.15em] text-charcoal mb-2 font-medium">Budget</label>
+                <select className="bg-transparent border-b border-charcoal/40 py-2 focus:outline-none focus:border-charcoal font-sans font-light text-sm text-charcoal appearance-none transition-colors">
+                  <option>Under $1K</option>
+                  <option>$1K–$5K</option>
+                  <option>$5K–$10K</option>
+                  <option>$10K+</option>
+                  <option>Let's Discuss</option>
+                </select>
+              </div>
+
+              <div className="flex flex-col">
+                <label className="text-[10px] uppercase tracking-[0.15em] text-charcoal mb-2 font-medium">Message</label>
+                <textarea rows={4} className="bg-transparent border-b border-charcoal/40 py-2 focus:outline-none focus:border-charcoal font-sans font-light text-sm text-charcoal placeholder-charcoal/40 resize-none transition-colors" placeholder="Tell us about your project..."></textarea>
+              </div>
+
+              <button
+                type="submit"
+                className="w-full bg-charcoal text-white hover:bg-charcoal/80 transition-colors duration-200 py-4 text-[12px] font-semibold tracking-widest uppercase mt-4"
+              >
+                + Send Message
+              </button>
+            </form>
           </ScrollReveal>
-
         </div>
       </section>
-    </>
+    </div>
   );
 }

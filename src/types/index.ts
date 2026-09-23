@@ -3,7 +3,7 @@ export interface Project {
   name: string;
   category: string;
   tags: string[];
-  imageUrl: string;
+  image: string;
   description: string;
 }
 

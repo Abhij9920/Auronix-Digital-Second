@@ -1,9 +1,8 @@
-import { Outlet, useLocation } from 'react-router-dom';
-import { useEffect } from 'react';
-import { TopBar } from '../ui/TopBar';
+import { Outlet } from 'react-router-dom';
 import { Navbar } from './Navbar';
 import { Footer } from './Footer';
-import { Cursor } from '../ui/Cursor';
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
 export function Layout() {
   const { pathname } = useLocation();
@@ -13,18 +12,12 @@ export function Layout() {
   }, [pathname]);
 
   return (
-    <>
-      <Cursor />
-      <div className="min-h-screen flex flex-col bg-ivory">
-        <TopBar />
-        <Navbar />
-        <main className="flex-grow">
-          <div className="animate-fade-in">
-            <Outlet />
-          </div>
-        </main>
-        <Footer />
-      </div>
-    </>
+    <div className="min-h-screen flex flex-col">
+      <Navbar />
+      <main className="flex-grow pt-28">
+        <Outlet />
+      </main>
+      <Footer />
+    </div>
   );
 }

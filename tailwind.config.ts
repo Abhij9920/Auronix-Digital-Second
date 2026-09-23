@@ -8,21 +8,21 @@ const config: Config = {
         charcoal: '#1F2022',
         gold: '#C8921E',
         ivory: '#F7F5F0',
-        'clr-gray': '#7a7a74',
-        'clr-line': '#e4e2dc',
-        'clr-mid': '#c0beb8',
-        'clr-dark': '#2a2a2c',
+        'soft-white': '#FFFFFF',
+        'light-gray': '#f0eeea',
+        'border-gray': '#e4e2dc',
+        'text-gray': '#7a7a74',
       },
       fontFamily: {
-        display: ['"Bebas Neue"', 'sans-serif'],
         sans: ['"DM Sans"', 'sans-serif'],
+        serif: ['"Playfair Display"', 'serif'],
       },
       transitionTimingFunction: {
         'ease-out-custom': 'cubic-bezier(.22, 1, .36, 1)',
       },
       keyframes: {
         fadeUp: {
-          from: { opacity: '0', transform: 'translateY(28px)' },
+          from: { opacity: '0', transform: 'translateY(16px)' },
           to: { opacity: '1', transform: 'translateY(0)' },
         },
         fadeIn: {
@@ -31,8 +31,10 @@ const config: Config = {
         },
       },
       animation: {
-        'fade-up': 'fadeUp .85s cubic-bezier(.22, 1, .36, 1) both',
-        'fade-up-delay': 'fadeUp .85s .22s cubic-bezier(.22, 1, .36, 1) both',
+        'fade-up': 'fadeUp .6s ease-out both',
+        'fade-up-delay-100': 'fadeUp .6s ease-out .1s both',
+        'fade-up-delay-200': 'fadeUp .6s ease-out .2s both',
+        'fade-up-delay-300': 'fadeUp .6s ease-out .3s both',
         'fade-in': 'fadeIn .38s ease both',
       },
     },

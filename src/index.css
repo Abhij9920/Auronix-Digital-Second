@@ -3,10 +3,6 @@
 @tailwind utilities;
 
 @layer base {
-  * {
-    cursor: none !important;
-  }
-  
   html,
   body {
     @apply bg-ivory text-charcoal font-sans antialiased;
@@ -16,22 +12,27 @@
 
   /* Custom scrollbar for Webkit */
   ::-webkit-scrollbar {
-    width: 10px;
+    width: 8px;
   }
   ::-webkit-scrollbar-track {
-    @apply bg-charcoal;
+    @apply bg-light-gray;
   }
   ::-webkit-scrollbar-thumb {
-    @apply bg-gold/50;
+    @apply bg-text-gray/50 rounded-full;
   }
   ::-webkit-scrollbar-thumb:hover {
-    @apply bg-gold;
+    @apply bg-charcoal/50;
   }
 }
 
 @layer utilities {
   .nav-shrink {
-    padding-top: 12px !important;
-    padding-bottom: 12px !important;
+    padding-top: 16px !important;
+    padding-bottom: 16px !important;
   }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
 }

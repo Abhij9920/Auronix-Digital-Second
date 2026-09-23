@@ -4,62 +4,93 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-charcoal text-white pt-24 pb-8 overflow-hidden relative">
-      <div className="max-w-[1400px] mx-auto px-10 relative z-10">
-        
-        {/* Top Section */}
-        <div className="flex flex-col md:flex-row justify-between mb-20 gap-10">
-          <div className="max-w-xs">
-            <h3 className="font-display text-[32px] tracking-[0.04em] mb-2">AURONIX DIGITAL™</h3>
-            <p className="text-white/60 text-sm mb-6">Your Digital Growth Partner</p>
-            <div className="w-8 h-0.5 bg-gold mb-8"></div>
-            
-            <div className="flex gap-3">
+    <footer className="bg-charcoal relative overflow-hidden pt-20 pb-8 px-6 md:px-16 text-white">
+      <div className="max-w-7xl mx-auto relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
+          {/* Column 1: Brand */}
+          <div className="col-span-1 md:col-span-1">
+            <div className="mb-6">
+              <div className="font-bold tracking-wide text-sm">AURONIX DIGITAL</div>
+              <div className="text-gold text-[10px] uppercase tracking-widest mt-1">
+                Your Digital Growth Partner
+              </div>
+            </div>
+            <div className="w-12 h-px bg-gold mb-6"></div>
+            <p className="text-white/40 text-sm font-sans font-light mb-8 max-w-xs">
+              We offer end-to-end digital solutions designed to grow your brand and maximise your ROI.
+            </p>
+            <div className="flex space-x-3">
               {['FB', 'TW', 'LI', 'IG'].map((social) => (
-                <a key={social} href="#" className="w-10 h-10 border border-white/10 rounded flex items-center justify-center text-xs tracking-wider transition-colors hover:bg-gold hover:border-gold hover:text-white">
+                <a
+                  key={social}
+                  href="#"
+                  className="w-8 h-8 border border-white/20 flex items-center justify-center text-[10px] hover:border-gold hover:text-gold transition-colors duration-200"
+                >
                   {social}
                 </a>
               ))}
             </div>
           </div>
 
-          <div className="flex gap-16 md:gap-24">
-            <div>
-              <h4 className="font-display text-xl tracking-wider mb-6 text-gold">CONTACT</h4>
-              <ul className="space-y-4 text-sm text-white/60">
-                <li>hello@auronixdigital.com</li>
-                <li>Melbourne, Australia</li>
-                <li>+44 20 7946 0958</li>
-              </ul>
+          {/* Column 2: Contact */}
+          <div className="col-span-1">
+            <div className="text-gold text-[10px] uppercase tracking-widest mb-6 font-medium">
+              Contact
             </div>
-            
-            <div>
-              <h4 className="font-display text-xl tracking-wider mb-6 text-gold">EXPLORE</h4>
-              <ul className="space-y-4 text-sm">
-                <li><Link to="/services" className="text-white/60 hover:text-gold transition-colors">Services</Link></li>
-                <li><Link to="/work" className="text-white/60 hover:text-gold transition-colors">Work</Link></li>
-                <li><Link to="/about" className="text-white/60 hover:text-gold transition-colors">About Us</Link></li>
-                <li><Link to="/contact" className="text-white/60 hover:text-gold transition-colors">Contact</Link></li>
-              </ul>
+            <div className="space-y-3 text-white/50 text-sm font-sans font-light">
+              <p>hello@auronixdigital.com</p>
+              <p>+91 00000 00000</p>
+              <p className="pt-2">Mumbai, India</p>
             </div>
+          </div>
+
+          {/* Column 3: Since */}
+          <div className="col-span-1">
+            <div className="text-gold text-[10px] uppercase tracking-widest mb-6 font-medium">
+              Since 2024
+            </div>
+            <div className="text-white/50 text-sm font-sans font-light">
+              {currentYear}
+            </div>
+          </div>
+
+          {/* Column 4: Links */}
+          <div className="col-span-1">
+            <div className="text-gold text-[10px] uppercase tracking-widest mb-6 font-medium">
+              Links
+            </div>
+            <nav className="flex flex-col space-y-3 text-white/50 text-sm font-sans font-light">
+              <Link to="/" className="hover:text-white transition-colors duration-200">
+                Home
+              </Link>
+              <Link to="/works" className="hover:text-white transition-colors duration-200">
+                Works
+              </Link>
+              <Link to="/about" className="hover:text-white transition-colors duration-200">
+                About
+              </Link>
+              <Link to="/contact" className="hover:text-white transition-colors duration-200">
+                Contact
+              </Link>
+            </nav>
           </div>
         </div>
 
-        {/* Bottom Section */}
-        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between text-xs text-white/40 tracking-wider">
-          <p>© {currentYear} Auronix Digital. All rights reserved.</p>
-          <div className="flex gap-6 mt-4 md:mt-0">
-            <a href="#" className="hover:text-gold transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-gold transition-colors">Terms of Service</a>
-          </div>
+        {/* Bottom Bar */}
+        <div className="flex flex-col md:flex-row justify-between items-center border-t border-white/10 pt-8 text-[11px] text-white/25 uppercase tracking-widest">
+          <p>&copy; {currentYear} Auronix Digital. All rights reserved.</p>
+          <Link to="#" className="hover:text-white transition-colors duration-200 mt-4 md:mt-0">
+            Privacy Policy
+          </Link>
         </div>
       </div>
 
-      {/* Giant Wordmark Background */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full text-center pointer-events-none select-none overflow-hidden">
-        <div className="font-display text-[140px] md:text-[220px] lg:text-[280px] leading-[0.75] tracking-tight text-white opacity-5 whitespace-nowrap">
-          AURONIX
-        </div>
+      {/* Giant Faded Text */}
+      <div
+        className="absolute bottom-[-40px] md:bottom-[-80px] left-0 right-0 w-full text-center text-white font-serif whitespace-nowrap opacity-[0.04] pointer-events-none select-none z-0"
+        style={{ fontSize: 'clamp(80px, 15vw, 180px)', lineHeight: 1 }}
+      >
+        AURONIX
       </div>
     </footer>
   );

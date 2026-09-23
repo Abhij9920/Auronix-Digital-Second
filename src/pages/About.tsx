@@ -1,114 +1,219 @@
-import { Hero } from '../components/sections/Hero';
+import { SectionLabel } from '../components/ui/SectionLabel';
+import { Button } from '../components/ui/Button';
 import { ScrollReveal } from '../components/ui/ScrollReveal';
-import { StatsRow } from '../components/sections/StatsRow';
-import { CTASection } from '../components/sections/CTASection';
+import { Link } from 'react-router-dom';
 
 export function About() {
-  const values = [
-    {
-      title: "Results First",
-      desc: "Every decision is measured against one question: does this drive growth?"
-    },
-    {
-      title: "Design with Purpose",
-      desc: "Beautiful work that also converts. Aesthetics serve strategy."
-    },
-    {
-      title: "Radical Transparency",
-      desc: "No black boxes. You see everything — strategy, data, and results."
-    }
-  ];
-
-  const team = [
-    { name: "Alex Mercer", role: "Strategy Director", img: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop" },
-    { name: "Jordan Lee", role: "Creative Lead", img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop" },
-    { name: "Samira Patel", role: "Head of Growth", img: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop" },
-    { name: "David Chen", role: "Technical Director", img: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=400&fit=crop" }
-  ];
-
   return (
-    <>
-      <Hero 
-        headline="WE ARE AURONIX DIGITAL"
-        subtext="A team obsessed with growth, design, and results."
-        minHeight="min-h-[60vh]"
-        backgroundImage="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop"
-      />
+    <div className="flex flex-col w-full">
 
-      {/* Story Section */}
-      <section className="py-32 px-10 max-w-[1400px] mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
-          <ScrollReveal>
-            <h2 className="text-[11px] uppercase tracking-[0.2em] font-medium text-charcoal/40 mb-10">OUR STORY</h2>
-            <div className="text-[24px] lg:text-[32px] font-light leading-relaxed italic text-gold mb-10">
-              "We founded Auronix to bridge the gap between beautiful aesthetics and hard data."
-            </div>
-            <div className="text-charcoal/70 leading-relaxed space-y-6">
-              <p>
-                What started as a boutique design studio quickly evolved into a full-service digital growth agency when we realised our clients needed more than just a pretty website—they needed systems that generate revenue.
-              </p>
-              <p>
-                Today, our multidisciplinary team of designers, developers, and marketers work in unison to build digital ecosystems that don't just look incredible, but actively drive business growth month over month.
-              </p>
-            </div>
-          </ScrollReveal>
-          
-          <ScrollReveal delay={200}>
-            <div className="aspect-square lg:aspect-[4/5] w-full bg-charcoal/5 rounded overflow-hidden">
-              <img 
-                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=1000&fit=crop" 
-                alt="Auronix team collaborating" 
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
-
-      {/* Values */}
-      <section className="py-32 px-10 max-w-[1400px] mx-auto border-t border-charcoal/10">
-        <ScrollReveal>
-          <h2 className="text-[11px] uppercase tracking-[0.2em] font-medium text-charcoal/40 mb-16">OUR VALUES</h2>
-        </ScrollReveal>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-20">
-          {values.map((val, idx) => (
-            <ScrollReveal key={idx} delay={idx * 150} className="border-t border-gold pt-8">
-              <h3 className="font-display text-2xl tracking-wide mb-4">{val.title}</h3>
-              <p className="text-charcoal/60 leading-relaxed">{val.desc}</p>
-            </ScrollReveal>
-          ))}
-        </div>
-      </section>
-
-      {/* Team */}
-      <section className="py-32 px-10 bg-charcoal/5">
+      {/* Page Header */}
+      <header className="bg-ivory py-20 px-8 md:px-16 border-b border-border-gray">
         <div className="max-w-[1400px] mx-auto">
           <ScrollReveal>
-            <h2 className="text-[11px] uppercase tracking-[0.2em] font-medium text-charcoal/40 mb-16">THE TEAM BEHIND THE GROWTH</h2>
+            <SectionLabel>ABOUT THE STUDIO</SectionLabel>
+            <h1
+              className="font-sans font-bold text-charcoal leading-tight mt-4 max-w-4xl"
+              style={{ fontSize: 'clamp(40px, 5.5vw, 72px)' }}
+            >
+              Strategy-led. Design-obsessed. Growth-focused.
+            </h1>
           </ScrollReveal>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
-            {team.map((member, idx) => (
-              <ScrollReveal key={idx} delay={idx * 100} className="group cursor-pointer">
-                <div className="aspect-[3/4] overflow-hidden rounded mb-6 bg-charcoal/10">
-                  <img 
-                    src={member.img} 
-                    alt={member.name} 
-                    className="w-full h-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-105"
-                  />
+        </div>
+      </header>
+
+      {/* Our Story Section */}
+      <section className="bg-white py-24 px-8 md:px-16">
+        <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+          <ScrollReveal>
+            <SectionLabel>OUR STORY</SectionLabel>
+            <h2
+              className="font-sans font-bold text-charcoal leading-tight mt-3 mb-6"
+              style={{ fontSize: 'clamp(36px, 4vw, 52px)' }}
+            >
+              Built to Drive Growth, Not Just Deliver Work.
+            </h2>
+            <div className="font-sans font-light text-[16px] text-text-gray leading-relaxed space-y-4">
+              <p>
+                Auronix Digital was founded on a simple belief: that great digital work should be measurable. We combine the rigour of a growth consultancy with the craft of a design studio.
+              </p>
+              <p>
+                From startups to scaling businesses, we partner with brands that are serious about growth — delivering strategy, design, development, and marketing as one connected engine.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal delay={200}>
+            <img
+              src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=600&fit=crop"
+              alt="Team working together"
+              className="w-full h-auto object-cover"
+            />
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* Meet the Team Section */}
+      <section className="bg-ivory py-24 px-8 md:px-16">
+        <div className="max-w-[1400px] mx-auto">
+          <ScrollReveal className="mb-16">
+            <SectionLabel>MEET THE TEAM</SectionLabel>
+            <h2
+              className="font-sans font-bold text-charcoal leading-tight mt-3"
+              style={{ fontSize: 'clamp(36px, 4vw, 52px)' }}
+            >
+              The People Behind Your Growth
+            </h2>
+          </ScrollReveal>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                name: 'Abhijeet Kodag',
+                role: 'Founder & CEO',
+                bio: 'Strategy, marketing, and digital systems. Abhijeet leads every client engagement with a growth-first mindset.',
+                image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=500&h=500&fit=crop&facepad=3',
+                bg: '#C8C5FF',
+              },
+              {
+                name: 'Sara Johnson',
+                role: 'Head of Design',
+                bio: 'Sara crafts visual identities and digital experiences that balance beauty with conversion at every touchpoint.',
+                image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=500&h=500&fit=crop&facepad=3',
+                bg: '#98F499',
+              },
+              {
+                name: 'Tom Benson',
+                role: 'Lead Developer',
+                bio: 'Tom architects scalable web products with clean code, fast performance, and future-proof foundations.',
+                image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=500&h=500&fit=crop&facepad=3',
+                bg: '#F7F5F0',
+              },
+            ].map((person, i) => (
+              <ScrollReveal key={i} delay={((i % 3) * 100) as 0 | 100 | 200 | 300}>
+                <div className="bg-white border border-border-gray overflow-hidden hover:shadow-md transition-shadow duration-300 h-full flex flex-col">
+                  <div className="relative" style={{ backgroundColor: person.bg }}>
+                    <img
+                      src={person.image}
+                      alt={person.name}
+                      className="w-full aspect-[4/3] object-cover object-top mix-blend-multiply"
+                    />
+                  </div>
+                  <div className="p-6 flex-grow flex flex-col">
+                    <h3 className="font-sans font-semibold text-[18px] text-charcoal">{person.name}</h3>
+                    <span className="font-sans text-[11px] text-gold uppercase tracking-[0.15em] mt-1 block">{person.role}</span>
+                    <p className="font-sans font-light text-[14px] text-text-gray leading-relaxed mt-3">{person.bio}</p>
+                  </div>
                 </div>
-                <h4 className="font-display text-xl tracking-wide">{member.name}</h4>
-                <p className="text-xs uppercase tracking-wider text-charcoal/50 mt-1">{member.role}</p>
               </ScrollReveal>
             ))}
           </div>
         </div>
       </section>
 
-      <div className="max-w-[1400px] mx-auto px-10 py-20">
-        <StatsRow />
-      </div>
+      {/* Our Values Section */}
+      <section className="bg-charcoal py-24 px-8 md:px-16">
+        <div className="max-w-[1400px] mx-auto">
+          <ScrollReveal className="mb-16">
+            <SectionLabel>OUR VALUES</SectionLabel>
+            <h2
+              className="font-sans font-bold text-white leading-tight mt-3"
+              style={{ fontSize: 'clamp(36px, 4vw, 52px)' }}
+            >
+              What Drives Us
+            </h2>
+          </ScrollReveal>
 
-      <CTASection />
-    </>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border border-white/10">
+            {[
+              { num: '01', title: 'Results First', body: 'Every decision is measured against one question: does this drive growth?', bg: '#C8C5FF', dark: false },
+              { num: '02', title: 'Design with Purpose', body: 'Beautiful work that also converts. Aesthetics always serve strategy.', bg: '#98F499', dark: false },
+              { num: '03', title: 'Radical Transparency', body: 'No black boxes. You see everything — strategy, data, results.', bg: '#1F2022', dark: true },
+            ].map((card, i) => (
+              <ScrollReveal key={i} delay={((i % 3) * 100) as 0 | 100 | 200 | 300}>
+                <div
+                  className="p-10 min-h-[260px] flex flex-col justify-between border-r border-white/10 last:border-r-0"
+                  style={{ backgroundColor: card.bg }}
+                >
+                  <div>
+                    <div className={`w-3 h-3 rounded-full mb-6 ${card.dark ? 'bg-gold' : 'bg-charcoal'}`}></div>
+                    <h3 className={`font-sans font-semibold text-[20px] mb-3 ${card.dark ? 'text-white' : 'text-charcoal'}`}>{card.title}</h3>
+                    <p className={`font-sans font-light text-[14px] leading-relaxed ${card.dark ? 'text-white/55' : 'text-charcoal/65'}`}>{card.body}</p>
+                  </div>
+                  <div className={`text-[11px] font-mono mt-6 ${card.dark ? 'text-gold' : 'text-charcoal/40'}`}>{card.num}</div>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Form Section */}
+      <section className="bg-ivory py-24 px-8 md:px-16">
+        <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20">
+          <ScrollReveal>
+            <SectionLabel>GET IN TOUCH</SectionLabel>
+            <h2
+              className="font-sans font-bold text-charcoal leading-tight mt-3 mb-8"
+              style={{ fontSize: 'clamp(36px, 4vw, 52px)' }}
+            >
+              Ready to Leave a Mark?
+            </h2>
+
+            <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+              <div className="grid grid-cols-2 gap-6">
+                <div className="flex flex-col">
+                  <label className="text-[10px] uppercase tracking-[0.15em] text-charcoal mb-2 font-medium">First Name *</label>
+                  <input required type="text" className="border-b border-border-gray bg-transparent py-2.5 focus:outline-none focus:border-charcoal font-sans font-light text-sm transition-colors" />
+                </div>
+                <div className="flex flex-col">
+                  <label className="text-[10px] uppercase tracking-[0.15em] text-charcoal mb-2 font-medium">Last Name</label>
+                  <input type="text" className="border-b border-border-gray bg-transparent py-2.5 focus:outline-none focus:border-charcoal font-sans font-light text-sm transition-colors" />
+                </div>
+              </div>
+
+              <div className="flex flex-col">
+                <label className="text-[10px] uppercase tracking-[0.15em] text-charcoal mb-2 font-medium">Email *</label>
+                <input required type="email" className="border-b border-border-gray bg-transparent py-2.5 focus:outline-none focus:border-charcoal font-sans font-light text-sm transition-colors" />
+              </div>
+
+              <div className="flex flex-col">
+                <label className="text-[10px] uppercase tracking-[0.15em] text-charcoal mb-2 font-medium">Phone</label>
+                <input type="tel" className="border-b border-border-gray bg-transparent py-2.5 focus:outline-none focus:border-charcoal font-sans font-light text-sm transition-colors" />
+              </div>
+
+              <div className="flex flex-col">
+                <label className="text-[10px] uppercase tracking-[0.15em] text-charcoal mb-2 font-medium">Message *</label>
+                <textarea required rows={4} className="border-b border-border-gray bg-transparent py-2.5 focus:outline-none focus:border-charcoal font-sans font-light text-sm resize-none transition-colors"></textarea>
+              </div>
+
+              <button type="submit" className="w-full bg-charcoal text-white hover:bg-gold transition-colors duration-200 py-4 text-[13px] font-semibold tracking-widest uppercase mt-4">
+                Send Message →
+              </button>
+            </form>
+          </ScrollReveal>
+
+          <ScrollReveal delay={200} className="lg:pt-24 flex flex-col">
+            <h3 className="font-sans font-semibold text-[20px] text-charcoal mb-2">Get in Touch</h3>
+            <div className="w-12 h-[2px] bg-gold my-4"></div>
+
+            <div className="space-y-4 font-sans font-light text-text-gray text-[15px]">
+              <p><a href="mailto:hello@auronixdigital.com" className="hover:text-charcoal transition-colors">hello@auronixdigital.com</a></p>
+              <p><a href="tel:+910000000000" className="hover:text-charcoal transition-colors">+91 00000 00000</a></p>
+              <p>Mumbai, India</p>
+            </div>
+
+            <div className="mt-8 flex space-x-4 text-sm font-sans font-medium text-charcoal">
+              {['FB', 'TW', 'LI', 'IG'].map((s, i, arr) => (
+                <span key={s} className="flex items-center gap-4">
+                  <a href="#" className="hover:text-gold transition-colors">{s}</a>
+                  {i < arr.length - 1 && <span className="text-text-gray/40">&middot;</span>}
+                </span>
+              ))}
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+    </div>
   );
 }

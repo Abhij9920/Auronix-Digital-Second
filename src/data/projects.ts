@@ -1,68 +1,14 @@
-import type { Project } from '../types';
-
-export const projects: Project[] = [
-  {
-    id: 'p1',
-    name: 'REVAMP™',
-    category: 'Design',
-    tags: ['UI/UX Design', 'Redesign'],
-    imageUrl: 'https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=500&h=340&fit=crop',
-    description: 'Complete brand overhaul and new digital presence.'
-  },
-  {
-    id: 'p2',
-    name: 'NOVA BRAND',
-    category: 'Design',
-    tags: ['Brand Identity', 'Guidelines'],
-    imageUrl: 'https://images.unsplash.com/photo-1634084462412-b54873c0a56d?w=500&h=340&fit=crop',
-    description: 'Modern mobile app interface for a fintech startup.'
-  },
-  {
-    id: 'p3',
-    name: 'SHOPVAULT',
-    category: 'Develop',
-    tags: ['E-Commerce', 'Shopify'],
-    imageUrl: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=500&h=340&fit=crop',
-    description: 'High-conversion Shopify store for premium goods.'
-  },
-  {
-    id: 'p4',
-    name: 'ZENDESK PRO',
-    category: 'Develop',
-    tags: ['Web App', 'React'],
-    imageUrl: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=340&fit=crop',
-    description: 'Custom React dashboard for customer support teams.'
-  },
-  {
-    id: 'p5',
-    name: 'GROWTHLAB',
-    category: 'Market',
-    tags: ['SEO', 'Content Strategy'],
-    imageUrl: 'https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?w=500&h=340&fit=crop',
-    description: 'Comprehensive SEO strategy yielding 300% organic growth.'
-  },
-  {
-    id: 'p6',
-    name: 'ADPULSE',
-    category: 'Market',
-    tags: ['Paid Media', 'Google Ads'],
-    imageUrl: 'https://images.unsplash.com/photo-1611926653458-09294b3142bf?w=500&h=340&fit=crop',
-    description: 'High-ROI paid advertising campaigns across social platforms.'
-  },
-  {
-    id: 'p7',
-    name: 'LEADFLOW',
-    category: 'Scale',
-    tags: ['CRM', 'Automation'],
-    imageUrl: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=340&fit=crop',
-    description: 'Automated lead generation and nurturing funnels.'
-  },
-  {
-    id: 'p8',
-    name: 'FUNNELX',
-    category: 'Scale',
-    tags: ['Lead Gen', 'GoHighLevel'],
-    imageUrl: 'https://images.unsplash.com/photo-1533750349088-cd871a92f312?w=500&h=340&fit=crop',
-    description: 'Conversion rate optimization for enterprise sales.'
-  }
+export const projects = [
+  { id: '01', name: 'REVAMP™',        category: 'Design',   tags: ['UI/UX', 'Redesign'],       image: 'https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=600&h=400&fit=crop', description: 'Complete visual overhaul increasing user engagement by 62%.' },
+  { id: '02', name: 'NOVA BRAND',     category: 'Design',   tags: ['Brand Identity', 'Logo'],  image: 'https://images.unsplash.com/photo-1634084462412-b54873c0a56d?w=600&h=400&fit=crop', description: 'Full brand identity system for a D2C wellness startup.' },
+  { id: '03', name: 'SHOPVAULT',      category: 'Develop',  tags: ['E-Commerce', 'Shopify'],   image: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=600&h=400&fit=crop', description: 'Custom Shopify storefront hitting $500K revenue in month one.' },
+  { id: '04', name: 'ZENDESK PRO',    category: 'Develop',  tags: ['Web App', 'React'],        image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop', description: 'Real-time dashboard for 50K+ daily active users.' },
+  { id: '05', name: 'GROWTHLAB',      category: 'Market',   tags: ['SEO', 'Content'],          image: 'https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?w=600&h=400&fit=crop', description: '340% organic traffic increase in 6 months.' },
+  { id: '06', name: 'ADPULSE',        category: 'Market',   tags: ['Paid Media', 'Google Ads'],image: 'https://images.unsplash.com/photo-1611926653458-09294b3142bf?w=600&h=400&fit=crop', description: '4.2x ROAS across Google and Meta.' },
+  { id: '07', name: 'LEADFLOW',       category: 'Scale',    tags: ['CRM', 'Automation'],       image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop', description: '300+ qualified leads per month on autopilot.' },
+  { id: '08', name: 'FUNNELX',        category: 'Scale',    tags: ['Lead Gen', 'GHL'],         image: 'https://images.unsplash.com/photo-1533750349088-cd871a92f312?w=600&h=400&fit=crop', description: '28% funnel conversion vs 6% industry average.' },
+  { id: '09', name: 'FORMA STUDIO',   category: 'Design',   tags: ['Branding', 'Identity'],    image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&h=400&fit=crop', description: 'Complete brand identity for a creative studio.' },
+  { id: '10', name: 'MIRA COSMETICS', category: 'Design',   tags: ['Branding', 'Packaging'],   image: 'https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=600&h=400&fit=crop', description: 'Packaging and identity for a premium cosmetics brand.' },
+  { id: '11', name: 'CODEFLO',        category: 'Develop',  tags: ['Development', 'React'],    image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&h=400&fit=crop', description: 'SaaS platform built and launched in 8 weeks.' },
+  { id: '12', name: 'NARRATIVE CO.',  category: 'Market',   tags: ['Content', 'Strategy'],     image: 'https://images.unsplash.com/photo-1542744094-3a31f272c490?w=600&h=400&fit=crop', description: 'Content strategy driving 5x organic reach.' },
 ];
