@@ -1,7 +1,5 @@
 import { SectionLabel } from '../components/ui/SectionLabel';
-import { Button } from '../components/ui/Button';
 import { ScrollReveal } from '../components/ui/ScrollReveal';
-import { Link } from 'react-router-dom';
 
 export function About() {
   return (
